@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: Cleaned staging table for Olist orders
+
+    columns:
+
+      - name: order_id
+        description: Primary key of the order
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: Customer identifier
+        tests:
+          - not_null
+
+      - name: order_status
+        description: Status of the order
+
+      - name: order_purchase_ts
+        description: Timestamp when the order was placed

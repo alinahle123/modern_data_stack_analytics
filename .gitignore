@@ -1,0 +1,29 @@
+# Virtual environment
+venv/
+
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyo
+*.pyc
+*.pyd
+
+# Jupyter Notebook checkpoints (if you ever use notebooks)
+.ipynb_checkpoints/
+
+# dbt compiled and temporary files
+target/
+dbt_modules/
+
+# dbt logs
+logs/
+# Windows
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# dbt profiles (contains your Snowflake credentials)
+profiles.yml
