@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_order_reviews
+    description: "Cleaned staging model for order reviews"
+
+    columns:
+      - name: review_id
+        tests:
+          - not_null
+  
+
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: review_score
+        tests:
+          - not_null

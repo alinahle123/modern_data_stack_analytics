@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_order_payments
+    description: "Cleaned staging model for order payments"
+
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: payment_sequential
+        tests:
+          - not_null
+
+      - name: payment_type
+        tests:
+          - not_null
+      - name: payment_installments
+        tests:
+          - not_null
+      - name: payment_value
+        tests:
+          - not_null

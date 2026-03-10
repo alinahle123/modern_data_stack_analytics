@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_sellers
+    description: "Cleaned staging model for OLIST sellers"
+
+    columns:
+      - name: seller_id
+        tests:
+          - not_null
+          - unique
+
+      - name: seller_zip_code_prefix
+
+      - name: seller_city
+
+      - name: seller_state
+        tests:
+          - not_null

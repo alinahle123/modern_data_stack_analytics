@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_geolocation
+    description: "Cleaned geolocation dataset from Olist"
+
+    columns:
+      - name: zip_code_prefix
+        description: "Zip code prefix used for location mapping"
+        tests:
+          - not_null
+
+      - name: latitude
+        description: "Latitude coordinate"
+        tests:
+          - not_null
+
+      - name: longitude
+        description: "Longitude coordinate"
+        tests:
+          - not_null
+
+      - name: city
+        description: "City name"
+        tests:
+          - not_null
+
+      - name: state
+        description: "Brazilian state code"
+        tests:
+          - not_null

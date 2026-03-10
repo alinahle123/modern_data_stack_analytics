@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "Cleaned staging model for OLIST products"
+
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_category_name
+
+      - name: product_photos_qty
+
+      - name: product_weight_g
