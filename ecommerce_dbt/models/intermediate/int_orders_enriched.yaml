@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: int_orders_enriched
+    description: "Orders enriched with customer location, payment totals and number of items."
+
+    columns:
+
+      - name: order_id
+        description: "Unique identifier for the order"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer who placed the order"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: order_status
+        description: "Status of the order"
+        tests:
+          - not_null
+
+      - name: total_payment
+        description: "Total payment value for the order"
+        tests:
+          - not_null
+
+      - name: total_items
+        description: "Number of items in the order"
+        tests:
+          - not_null
