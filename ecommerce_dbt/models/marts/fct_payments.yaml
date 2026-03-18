@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fact_payments
+    description: "Fact table containing payment records at the payment transaction level."
+
+    columns:
+      - name: order_id
+        description: "Unique identifier of the order associated with the payment"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('int_orders_enriched')
+              field: order_id
+
+      - name: payment_sequential
+        description: "Sequence number of the payment for a given order"
+        tests:
+          - not_null
+
+      - name: payment_type
+        description: "Type of payment used by the customer"
+        tests:
+          - not_null
+
+      - name: payment_installments
+        description: "Number of installments used for the payment"
+        tests:
+          - not_null
+
+      - name: payment_value
+        description: "Amount paid in this payment transaction"
+        tests:
+          - not_null
+
+    tests:
+      - unique:
+          combination_of_columns:
+            - order_id
+            - payment_sequential

@@ -1,9 +1,8 @@
 version: 2
 
 models:
-  - name: int_orders_enriched
-    description: "Orders enriched with payment totals, number of items, approval and delivery dates, delivery lead time, and average review score."
-
+  - name: fct_orders
+    description: "Order-level fact table used for order volume, revenue, and delivery performance analysis."
     columns:
       - name: order_id
         description: "Unique identifier for the order"

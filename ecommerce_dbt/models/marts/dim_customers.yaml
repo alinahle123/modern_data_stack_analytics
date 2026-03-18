@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension with customer attributes"
+
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_unique_id
+        tests:
+          - not_null
+
+      - name: customer_city
+        tests:
+          - not_null
+
+      - name: customer_state
+        tests:
+          - not_null

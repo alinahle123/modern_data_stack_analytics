@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_geolocation
+    description: "Geolocation dimension at zip code prefix level, with averaged coordinates and associated city/state."
+
+    columns:
+
+      - name: zip_code_prefix
+        description: "Brazilian ZIP code prefix (first 5 digits), unique identifier for the geolocation"
+        tests:
+          - not_null
+          - unique
+
+      - name: city
+        description: "City corresponding to the ZIP code prefix"
+        tests:
+          - not_null
+
+      - name: state
+        description: "State corresponding to the ZIP code prefix"
+        tests:
+          - not_null
+
+      - name: latitude
+        description: "Average latitude for the ZIP code prefix"
+        tests:
+          - not_null
+
+      - name: longitude
+        description: "Average longitude for the ZIP code prefix"
+        tests:
+          - not_null
