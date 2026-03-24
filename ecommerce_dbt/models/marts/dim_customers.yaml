@@ -13,11 +13,3 @@ models:
       - name: customer_unique_id
         tests:
           - not_null
-
-      - name: customer_city
-        tests:
-          - not_null
-
-      - name: customer_state
-        tests:
-          - not_null

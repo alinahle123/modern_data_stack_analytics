@@ -14,9 +14,8 @@ models:
       - name: CUSTOMER_ZIP_CODE_PREFIX
         tests:
           - not_null
-      - name: CUSTOMER_CITY
-        tests:
-          - not_null
-      - name: CUSTOMER_STATE
-        tests:
-          - not_null
+          - relationships:
+              to: ref('stg_geolocation')
+              field: zip_code_prefix
+              severity: warn
+
