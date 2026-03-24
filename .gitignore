@@ -25,5 +25,10 @@ Thumbs.db
 # VSCode settings
 .vscode/
 
-# dbt profiles (contains your Snowflake credentials)
+# dbt profiles
+
 profiles.yml
+
+# powerbi gitignore
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
