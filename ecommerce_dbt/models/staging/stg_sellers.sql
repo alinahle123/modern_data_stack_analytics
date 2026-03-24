@@ -13,16 +13,16 @@ cleaned AS (
 
     SELECT
 
-        TRIM(seller_id) AS seller_id,
+        NULLIF(TRIM(seller_id), '') AS seller_id,
 
-        CAST(seller_zip_code_prefix AS NUMBER) AS seller_zip_code_prefix,
-
-        LOWER(TRIM(seller_city)) AS seller_city,
-
-        UPPER(TRIM(seller_state)) AS seller_state
+        /* keep zip as string to match geolocation */
+        LPAD(CAST(seller_zip_code_prefix AS STRING), 5, '0') AS seller_zip_code_prefix
 
     FROM source
 
 )
 
-SELECT * FROM cleaned
+SELECT *
+FROM cleaned
+WHERE seller_id IS NOT NULL
+  AND seller_zip_code_prefix IS NOT NULL
